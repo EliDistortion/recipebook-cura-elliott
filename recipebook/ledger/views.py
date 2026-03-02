@@ -8,10 +8,10 @@ from .models import Recipe
 
 class RecipesListView(ListView):
     model = Recipe
-    template_name = "recipes_list.html"
+    template_name = 'recipes_list.html'
 
 class RecipeDetailView(DetailView):
     model = Recipe
-    template_name = "recipe_detail.html"
+    template_name = 'recipe_detail.html'
     
 # Create your views here.

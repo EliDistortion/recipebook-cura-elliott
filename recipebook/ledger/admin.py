@@ -14,12 +14,10 @@ class RecipeAdmin(admin.ModelAdmin):
     list_filter = ('ingredients',)
 
     fieldsets = (
-        ('Details', {
-            'fields': [
-                ('name', 'ingredients'),
-                ]
-        }),
+        (
+            'Details', 
+            {'fields':[('name', 'ingredients'),]}
+        ),
     )
-
 
 admin.site.register(Recipe,RecipeAdmin)
