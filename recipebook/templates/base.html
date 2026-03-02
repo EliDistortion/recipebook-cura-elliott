@@ -1,7 +1,18 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <body>
             <h1>Recipe Book</h1>
+            {% if request.user.is_authenticated %}
+            {{request.user}}
+            <form method = "POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type = "submit">Logout</button>
+            </form>
+            {% else %}
+                <a href = "{% url 'login' %}">Login</a>
+                <a href = "{% url 'password_reset' %}">Forgot Password</a>
+            {% endif %}
             {% block content %}
             {% endblock %}
         </body>
