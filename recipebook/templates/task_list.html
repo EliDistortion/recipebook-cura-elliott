@@ -1,0 +1,17 @@
+<form action="/" method="post">
+    {% csrf_token %}
+    <label for="task_name">
+        <span>Task Name</span>
+        <input type="text" id="task_name" name="task_name">
+    </label>
+    <label for="task_due">
+        <span>Task Due Date</span>
+        <input type="datetime" id="task_due" name="task_due">
+    </label>
+    <select id="taskgroup" name="taskgroup">
+        {% for group in taskgroups %}
+            <option value="{{ group.pk }}">{{ group.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
